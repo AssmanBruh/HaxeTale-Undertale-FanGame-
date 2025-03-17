@@ -12,12 +12,11 @@ import openfl.geom.Rectangle;
 
 class CoolState extends flixel.FlxState{
     var input:InputConstants;
-    var border:FlxSprite;
+	var border:Border;
     var gameWidth:Int = 640;
     var gameHeight:Int = 480;
     var borderCAM:FlxCamera;
-    var gameXAdds = 160;
-    var gameYAdds = 32;
+
     override function create() {
         super.create();
 
@@ -28,9 +27,7 @@ class CoolState extends flixel.FlxState{
         borderCAM.ID = 1;
         FlxG.cameras.add(borderCAM, false);
 
-        border = new FlxSprite(0,0,AssetPaths.img("borders/border4"));
-        border.pixels.fillRect(new Rectangle(Math.floor((FlxG.width-gameWidth)/2)-border.x, Math.floor((FlxG.height-gameHeight)/2),gameWidth,gameHeight), FlxColor.TRANSPARENT);
-        border.updateHitbox();
+		border = new Border(Constants.borderPreffix, gameWidth, gameHeight);
         border.cameras = [borderCAM];
         add(border);
     }
@@ -60,8 +57,8 @@ class CoolState extends flixel.FlxState{
             // }}}
             // sep
             if (sprite != border){
-            sprite.x += gameXAdds;
-            sprite.y += gameYAdds;
+				sprite.x += Constants.gameXAdds;
+				sprite.y += Constants.gameYAdds;
             }
         }
         return super.add(basic);

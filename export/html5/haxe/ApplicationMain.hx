@@ -16,11 +16,11 @@ class ApplicationMain
 	#if !macro
 	public static function main()
 	{
-		lime.system.System.__registerEntryPoint("UndertaleFANGAME", create);
+		lime.system.System.__registerEntryPoint("UtGreen", create);
 
 		#if (js && html5)
 		#if (munit || (utest && openfl_enable_utest_legacy_mode))
-		lime.system.System.embed("UndertaleFANGAME", null, 960, 544);
+		lime.system.System.embed("UtGreen", null, 960, 544);
 		#end
 		#else
 		create(null);
@@ -35,10 +35,10 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "40";
-		app.meta["company"] = "HaxeFlixel";
-		app.meta["file"] = "UndertaleFANGAME";
-		app.meta["name"] = "UndertaleFANGAME";
+		app.meta["build"] = "3";
+		app.meta["company"] = "UndertaleGreen";
+		app.meta["file"] = "UtGreen";
+		app.meta["name"] = "UNDERTALE: GREEN";
 		app.meta["packageName"] = "com.example.myapp";
 		app.meta["version"] = "0.0.1";
 
@@ -60,7 +60,7 @@ class ApplicationMain
 			minimized: false,
 			parameters: {},
 			resizable: true,
-			title: "UndertaleFANGAME",
+			title: "UNDERTALE: GREEN",
 			width: 960,
 			x: null,
 			y: null,
@@ -102,7 +102,7 @@ class ApplicationMain
 		app.createWindow(attributes);
 		
 		#elseif air
-		app.window.title = "UndertaleFANGAME";
+		app.window.title = "UNDERTALE: GREEN";
 		#else
 		app.window.context.attributes.background = 0;
 		app.window.frameRate = 60;

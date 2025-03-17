@@ -15,6 +15,12 @@ class TitleScreen extends CoolState {
         a.updateHitbox();
         add(a);
 
+		// Log.traceColor()
+		Log.traceColor("Este es un mensaje normal", "Blanco"); // Blanco
+		Log.traceColor("Advertencia", "Amarillo"); // Amarillo
+		Log.traceColor("Error crítico!", "Rojo"); // Rojo
+
+
         new FlxTimer().start(6, function(tmr){
             FlxG.switchState(new InitialRoom([443, 216]));
         });

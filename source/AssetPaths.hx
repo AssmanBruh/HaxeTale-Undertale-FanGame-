@@ -39,4 +39,8 @@ class AssetPaths {
     public static function sound(source:String="") {
         return 'assets/sounds/${source}.ogg';
     }
+	public static function font(source:String = "")
+	{
+		return 'assets/fonts/${source}';
+	}
 }

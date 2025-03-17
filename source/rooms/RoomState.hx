@@ -40,8 +40,8 @@ class RoomState extends CoolState{
 
         player = new Player(initPositions[0], initPositions[1]);
         add(player);
-        player.x -= gameXAdds+18;
-        player.y -= gameYAdds+27;
+		player.x -= Constants.gameXAdds + 18;
+		player.y -= Constants.gameYAdds + 27;
 
         fakeSoul = new Soul(player.x,player.x,player,true);
         fakeSoul.active = false;
@@ -91,8 +91,8 @@ class RoomState extends CoolState{
         });
         fastTimer(0.71, function() {
             FlxG.sound.play(AssetPaths.sound("countdown finish"), 0.9, false, null, true, function(){
-                blackBattleTransition.active = true;
-                blackBattleTransition.visible = true;
+					blackBattleTransition.active = false;
+					blackBattleTransition.visible = false;
                 // player.visible = false;
                 fakeSoul.active = false;
                 fakeSoul.visible = false;

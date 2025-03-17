@@ -5,6 +5,6 @@ class CustomTrace {
         var date = Date.now(); // Obtiene la fecha y hora actual
         var timeString = '${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}';
         // var timeString = '${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}';
-        trace('[${timeString}] ' + msg);
+		Log.traceColor('[${timeString}] ' + msg, "Verde");
     }
 }

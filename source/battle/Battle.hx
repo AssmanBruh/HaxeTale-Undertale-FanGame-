@@ -13,23 +13,33 @@ class Battle extends CoolSubState{
     public var attachSoul:Soul;
     var soul:Soul;
     public var player:Player;
+	var ui:UI;
+
+	public var box:Box;
     public function new(attachSoul:Soul, player:Player) {
         super();
         this.attachSoul = attachSoul;
         this.player = player;
 
         black = new FlxSprite(0,0);
-        black.makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
-        black.screenCenter();
+		black.makeGraphic(gameWidth, gameHeight, 0xFF000000);
+		// black.screenCenter();
         black.scrollFactor.set();
-        black.visible = false;
+		black.visible = true;
         add(black);
-        black.active = false;
+		black.active = true;
 
         bg = new Background("monster");
         add(bg);
 
-        soul = new Soul(attachSoul.x, attachSoul.y,player,false);
+		box = new Box(169.95, 249.85);
+		box.screenCenter(X);
+		add(box);
+
+		ui = new UI("CACA", 1, 20);
+		add(ui);
+
+		soul = new Soul(attachSoul.x, attachSoul.y, player, true);
         soul.comeBackTodaHUD();
         add(soul);
 
@@ -37,24 +47,47 @@ class Battle extends CoolSubState{
             CustomTrace.log("Camera: "+FlxG.cameras.list[i] + ", " + FlxG.cameras.list[i].ID);
         }
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
-
-        new FlxTimer().start(5, function(tmr){
-            close();
-        });
     }
 
     override function update(elapsed:Float) {
         super.update(elapsed);
 
+		if (soul.x < box.xBoundLeft)
+			soul.x = box.xBoundLeft;
+		if (soul.y < box.yBoundUp)
+			soul.y = box.yBoundUp;
+		if (soul.x + soul.width > box.xBoundLeft + box.xBoundRight)
+			soul.x = box.xBoundLeft + box.xBoundRight - soul.width;
+		if (soul.y + soul.height > box.yBoundUp + box.yBoundDown)
+			soul.y = box.yBoundUp + box.yBoundDown - soul.height;
+
+		if (FlxG.keys.justPressed.SIX)
+		{
+			soul.forIntro = false;
+		}
+
+		if (FlxG.keys.justPressed.EIGHT)
+		{
+			close();
+		}
+
         if (FlxG.keys.justPressed.SHIFT){
             add(new SoulParticles(attachSoul, true));
         }
+		if (FlxG.keys.justPressed.ONE)
+		{
+			box.reScale(4, 1);
+		}
+		if (FlxG.keys.justPressed.TWO)
+		{
+			box.reScale(0.45, 0.45);
+		}
     }
 
     override function close() {
         super.close();
 
-        FlxG.cameras.list.remove(FlxG.cameras.list[FlxG.cameras.list.length - 1]);
+		// FlxG.cameras.list.remove(FlxG.cameras.list[FlxG.cameras.list.length - 1]);
         black.visible = false;
         black.active = false;
     }
