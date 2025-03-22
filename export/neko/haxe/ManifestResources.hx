@@ -118,6 +118,9 @@ import sys.FileSystem;
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_monsters_flowey_floweysprites_ase extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_monsters_flowey_floweyspritesheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_player_frisk_spritesheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_player_greenhumansoul_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_rooms_floweyroom_ase extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_rooms_floweyroom_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_rooms_initroom_ase extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_rooms_initroom_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_rooms_room0_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }

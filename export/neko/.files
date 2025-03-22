@@ -23,6 +23,9 @@ export/neko/bin/assets/images/monsters/flowey/flowey.ase
 export/neko/bin/assets/images/monsters/flowey/floweySprites.ase
 export/neko/bin/assets/images/monsters/flowey/floweySpriteSheet.png
 export/neko/bin/assets/images/player/frisk-spritesheet.png
+export/neko/bin/assets/images/player/greenhumansoul.png
+export/neko/bin/assets/images/rooms/floweyRoom.ase
+export/neko/bin/assets/images/rooms/floweyRoom.png
 export/neko/bin/assets/images/rooms/initRoom.ase
 export/neko/bin/assets/images/rooms/initRoom.png
 export/neko/bin/assets/images/rooms/room0.png

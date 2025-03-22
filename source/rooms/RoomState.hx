@@ -66,6 +66,14 @@ class RoomState extends CoolState{
 
     override function update(elapsed:Float) {
         super.update(elapsed);
+		if (FlxG.keys.justPressed.SIX)
+		{
+			FlxG.switchState(new editor.MapEditor());
+		}
+		if (FlxG.keys.justPressed.FOUR)
+		{
+			FlxG.switchState(new editor.MapEditorANAL());
+		}
     }
 
     public function startBattle() {

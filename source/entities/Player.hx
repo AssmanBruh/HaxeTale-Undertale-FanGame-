@@ -13,7 +13,7 @@ class Player extends FlxSprite{
     public function new(X=0.0,Y=0.0) {
         super(X,Y);
         // makeGraphic(45,45,FlxColor.LIME);
-        loadGraphic(AssetPaths.frisk_spritesheet__png, true, 19, 29);
+		loadGraphic(AssetPaths.img("player/greenhumansoul"), true, 19, 29);
         animation.add("down", [1, 2, 3, 0], 5, false);
         animation.add("idle-down", [0], 5, false);
         animation.add("walkLeft", [5, 4], 5, false);

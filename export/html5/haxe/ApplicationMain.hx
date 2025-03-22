@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "3";
+		app.meta["build"] = "5";
 		app.meta["company"] = "UndertaleGreen";
 		app.meta["file"] = "UtGreen";
 		app.meta["name"] = "UNDERTALE: GREEN";

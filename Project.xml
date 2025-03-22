@@ -90,4 +90,5 @@
 
 	<!--Place custom nodes like icons here-->
 	<icon path="./icon.png" />
+	<icon path="icon.ico" />
 </project>

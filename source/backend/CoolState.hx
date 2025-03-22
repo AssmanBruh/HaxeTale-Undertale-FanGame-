@@ -46,21 +46,26 @@ class CoolState extends flixel.FlxState{
     }
 
     override function add(basic:FlxBasic):FlxBasic {
-        var sprite = cast (basic, FlxSprite);
-        if (sprite != null){
-            // if (basic == cast (FlxBasic, Player)){
-            // var player = cast (basic, FlxSprite);
-            // if (player != null){
-            //     if (sprite != player){
-            //     sprite.x += 160;
-            //     sprite.y += 32;
-            // }}}
-            // sep
-            if (sprite != border){
-				sprite.x += Constants.gameXAdds;
-				sprite.y += Constants.gameYAdds;
+		if (Std.isOfType(basic, FlxSprite))
+		{
+			var sprite = cast(basic, FlxSprite);
+			if (sprite != null)
+			{
+				// if (basic == cast (FlxBasic, Player)){
+				// var player = cast (basic, FlxSprite);
+				// if (player != null){
+				//     if (sprite != player){
+				//     sprite.x += 160;
+				//     sprite.y += 32;
+				// }}}
+				// sep
+				if (sprite != border)
+				{
+					sprite.x += Constants.gameXAdds;
+					sprite.y += Constants.gameYAdds;
+				}
             }
-        }
+		}
         return super.add(basic);
     }
 
